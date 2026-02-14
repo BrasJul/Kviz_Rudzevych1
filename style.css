@@ -1,7 +1,8 @@
-body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #e0e0e0;
-    color: #1a1a1a;
+/* ===== ОСНОВА ===== */
+body { 
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #1f2937;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,150 +10,155 @@ body {
     margin: 0;
 }
 
+/* ===== КОНТЕЙНЕР ===== */
 .app-container {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 4px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    padding: 2.5rem 2.8rem;
+    border-radius: 18px;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.15),
+        0 0 0 1px rgba(255,255,255,0.4);
     width: 90%;
-    max-width: 500px;
+    max-width: 520px;
     text-align: center;
-    border-top: 8px solid #00247d;
-    /* Royal Blue */
-    border-bottom: 8px solid #cf142b;
-    /* Union Jack Red */
+    animation: fadeIn 0.5s ease;
 }
 
+/* ===== АНІМАЦІЯ ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== ЕКРАН ===== */
 .screen {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.6rem;
 }
 
+/* ===== ЗАГОЛОВОК ===== */
 h2 {
-    color: #00247d;
+    color: #4338ca;
     margin-top: 0;
     font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
-/* Кнопки відповідей */
+/* ===== ВІДПОВІДІ ===== */
 #answers-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .answer-btn {
-    padding: 14px 20px;
-    border: 2px solid #00247d;
-    background: white;
-    border-radius: 0;
-    /* Більш строгий стиль */
+    padding: 15px 20px;
+    border: 2px solid transparent;
+    background: #f3f4f6;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 1.1rem;
-    color: #00247d;
+    font-size: 1.05rem;
+    color: #111827;
     transition: all 0.2s ease;
     font-family: inherit;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .answer-btn:hover:not(:disabled) {
-    background-color: #00247d;
+    background: #4338ca;
     color: white;
+    transform: translateY(-1px);
 }
 
 .answer-btn:disabled {
     cursor: default;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
-/* Стани відповідей */
+/* ===== СТАНИ ===== */
 .correct {
-    background-color: #006837 !important;
-    /* British Green */
-    border-color: #006837 !important;
+    background: #10b981 !important;
     color: white !important;
 }
 
 .wrong {
-    background-color: #cf142b !important;
-    /* Union Jack Red */
-    border-color: #cf142b !important;
+    background: #ef4444 !important;
     color: white !important;
 }
 
-/* Кнопки керування */
+/* ===== КНОПКИ ===== */
 #start-btn,
 #restart-btn {
-    padding: 14px 28px;
+    padding: 14px 30px;
     border: none;
-    border-radius: 0;
+    border-radius: 12px;
     cursor: pointer;
-    background-color: #cf142b;
-    /* Red Button */
+    background: linear-gradient(135deg, #4338ca, #6366f1);
     color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.2s;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
     font-family: inherit;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(67,56,202,0.4);
 }
 
 #start-btn:hover,
 #restart-btn:hover {
-    background-color: #a30e20;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(67,56,202,0.5);
 }
 
-/* Вибір теми */
+/* ===== ТЕМИ ===== */
 #topic-selection {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .topic-btn {
-    padding: 16px;
-    border: 2px solid #00247d;
-    background-color: white;
-    color: #00247d;
-    font-size: 1.1rem;
-    font-weight: bold;
+    padding: 15px;
+    border: none;
+    background: #eef2ff;
+    color: #4338ca;
+    font-size: 1.05rem;
+    font-weight: 600;
     cursor: pointer;
     text-transform: uppercase;
     transition: all 0.2s;
     font-family: inherit;
-    border-radius: 0;
+    border-radius: 12px;
 }
 
 .topic-btn:hover {
-    background-color: #00247d;
+    background: #4338ca;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
 }
 
-/* Утиліти */
-.hide {
-    display: none !important;
-}
-
+/* ===== ХЕДЕР ===== */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: bold;
-    color: #333;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 1rem;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.8rem;
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
+/* ===== РЕЗУЛЬТАТ ===== */
 .result-text {
     font-size: 1.4rem;
     margin: 1rem 0;
-    color: #00247d;
-    font-weight: bold;
+    color: #4338ca;
+    font-weight: 700;
+}
+
+/* ===== СЛУЖБОВЕ ===== */
+.hide {
+    display: none !important;
 }
